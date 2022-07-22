@@ -1,6 +1,6 @@
 # EasyVoiceMessage
 
-A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that allows you to record voice messages without having to keep your laser on the tiny square button.
+A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that allows you to record voice messages without having to keep your laser on the tiny square button. (although your laser needs to stay on your dash)
 
 ## Installation
 1. Install [NeosModLoader](https://github.com/zkxs/NeosModLoader).
