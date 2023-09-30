@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EasyVoiceMessage</RootNamespace>
     <AssemblyName>EasyVoiceMessage</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -31,29 +31,42 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="0Harmony, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>N:\SteamLibrary\steamapps\common\NeosVR\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="BaseX">
-      <HintPath>N:\SteamLibrary\steamapps\common\NeosVR\Neos_Data\Managed\BaseX.dll</HintPath>
-    </Reference>
-    <Reference Include="FrooxEngine">
-      <HintPath>N:\SteamLibrary\steamapps\common\NeosVR\Neos_Data\Managed\FrooxEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="NeosModLoader">
-      <HintPath>N:\SteamLibrary\steamapps\common\NeosVR\NeosModLoader.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
+	<PropertyGroup>
+		<ResoniteDirectory Condition="'$(ResoniteDirectory)' == ''">D:\SteamLibrary\steamapps\common\Resonite</ResoniteDirectory>
+		<ResoniteCoreLibs>$(ResoniteDirectory)\Resonite_Data\Managed</ResoniteCoreLibs>
+		<ResoniteRmlLibs>$(ResoniteDirectory)\rml_libs</ResoniteRmlLibs>
+		<ResoniteLibs>$(ResoniteDirectory)\Libraries</ResoniteLibs>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Elements.Core">
+			<HintPath>$(ResoniteCoreLibs)\Elements.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="FrooxEngine">
+			<HintPath>$(ResoniteCoreLibs)\FrooxEngine.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(ResoniteRmlLibs)\0Harmony.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="ResoniteModLoader">
+			<HintPath>$(ResoniteLibs)\ResoniteModLoader.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+	  <ItemGroup>
     <Compile Include="EasyVoiceMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)\$(TargetFileName)" "N:\SteamLibrary\steamapps\common\NeosVR\nml_mods"</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)\$(TargetFileName)" "$(ResoniteCoreLibs)\rml_mods"</PostBuildEvent>
   </PropertyGroup>
 </Project>
