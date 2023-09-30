@@ -1,7 +1,7 @@
 EasyVoiceMessage
 ==========
 
-A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader) mod for [Resonite](https://resonite.com/) that allows you to configure on which sides the thumbstick will be  used as jump.
+A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader) mod for [Resonite](https://resonite.com/) that allows you to record voice messages without having to keep your laser on the tiny square button. (although your laser needs to stay on your dash)
 
 ## Installation
 1. Install [ResoniteModModLoader](https://github.com/resonite-modding-group/ResoniteModLoader).
